@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/data/categories.dart';
 
 class NewItem extends StatefulWidget {
   const NewItem({super.key});
@@ -14,9 +15,58 @@ class _NewItemState extends State<NewItem> {
       appBar: AppBar(
         title: const Text('Add a new item'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(12.0),
-        child: Text('The form'),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Form(
+          child: Column(
+            children: [
+              TextFormField(
+                maxLength: 50,
+                decoration: const InputDecoration(
+                  label: Text(
+                    'Name',
+                  ),
+                ),
+                validator: (value) => '..Demo',
+              ), // instead of TextField
+              Row(
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      label: Text('Quantity'),
+                    ),
+                    initialValue: '1',
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  DropdownButtonFormField(
+                    items: [
+                      for (final category in categories.entries)
+                        DropdownMenuItem(
+                          value: category.value,
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 16,
+                                height: 16,
+                                color: category.value.color,
+                              ),
+                              const SizedBox(
+                                width: 6,
+                              ),
+                              Text(category.value.name),
+                            ],
+                          ),
+                        )
+                    ],
+                    onChanged: (value) {},
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
