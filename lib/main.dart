@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/screens/home.dart';
+import 'package:shopping_list/widget/grocery_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           title: const Text('Your Groceries'),
           centerTitle: false,
         ),
-        body: const Home(),
+        body: const GroceryList(),
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/data/dummy_items.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class GroceryList extends StatelessWidget {
+  const GroceryList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
