@@ -10,6 +10,14 @@ class NewItem extends StatefulWidget {
 class _NewItemState extends State<NewItem> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add a new item'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(12.0),
+        child: Text('The form'),
+      ),
+    );
   }
 }
