@@ -48,6 +48,12 @@ class _NewItemState extends State<NewItem> {
         ),
       );
 
+      if (response.statusCode >= 400) {
+        setState(() {
+          _isSending = false;
+        });
+      }
+
       final Map<String, dynamic> resData = json.decode(response.body);
 
       if (!context.mounted) {
